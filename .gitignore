@@ -2,8 +2,9 @@
 voting_system.exe
 voting_system
 
-# Data file (contains voting data)
+# Data files
 voting_data.dat
+voting_results.txt
 
 # Object files
 *.o

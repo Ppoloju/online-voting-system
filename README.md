@@ -1,15 +1,27 @@
 # Online Voting System in C
 
-A command-line voting system written in C that allows users to manage candidates, cast votes, and view results with data persistence.
+A comprehensive command-line voting system written in C that allows users to manage candidates, cast votes, view results, and export data with full persistence.
 
 ## Features
 
-- Add up to 10 candidates for voting
-- Cast votes for registered candidates
-- View current voting results with vote counts and percentages
-- Reset all votes while keeping candidates
-- Clear all data (candidates and votes) for a fresh start
-- Automatic data persistence using binary file storage
+- **Candidate Management**
+  - Add up to 10 candidates for voting
+  - View all registered candidates
+  - Edit candidate names
+  - Delete candidates with vote preservation
+- **Voting Operations**
+  - Cast votes for registered candidates
+  - View current voting results with percentages
+  - Sort candidates by vote count
+  - Reset all votes while keeping candidates
+- **Data Analysis**
+  - View detailed voting statistics
+  - See current leader and vote distribution
+  - Calculate average votes per candidate
+- **Data Management**
+  - Automatic data persistence using binary file storage
+  - Export results to text file
+  - Clear all data for fresh start
 
 ## How to Run
 
@@ -17,7 +29,7 @@ A command-line voting system written in C that allows users to manage candidates
 
 Compile the program:
 ```bash
-gcc -std=c99 voting_system.c -o voting_system
+gcc voting_system.c -o voting_system
 ```
 
 Run the program:
@@ -29,7 +41,7 @@ Run the program:
 
 If Dev-C++ is installed in the default location:
 ```bash
-"C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\gcc.exe" -std=c99 voting_system.c -o voting_system.exe
+"C:\Program Files (x86)\Dev-Cpp\MinGW64\bin\gcc.exe" voting_system.c -o voting_system.exe
 ```
 
 Run the program:
@@ -57,9 +69,15 @@ The program provides an interactive menu with the following options:
 1. **Add Candidate** - Register a new candidate for voting
 2. **Cast Vote** - Vote for one of the registered candidates
 3. **View Results** - See current vote counts and percentages
-4. **Reset Votes** - Clear all votes (keeps candidates, requires confirmation)
-5. **Clear All Data** - Remove all candidates and votes (requires confirmation)
-6. **Exit** - Close the program
+4. **View Candidates** - List all registered candidates
+5. **Edit Candidate** - Modify candidate name
+6. **Delete Candidate** - Remove a candidate
+7. **Sort by Votes** - Display candidates ranked by votes
+8. **Show Statistics** - View detailed voting statistics
+9. **Export Results** - Save results to text file
+10. **Reset Votes** - Clear all votes (keeps candidates, requires confirmation)
+11. **Clear All Data** - Remove all candidates and votes (requires confirmation)
+12. **Exit** - Close the program
 
 ### Example Session
 
@@ -68,9 +86,15 @@ The program provides an interactive menu with the following options:
 1. Add Candidate
 2. Cast Vote
 3. View Results
-4. Reset Votes
-5. Clear All Data
-6. Exit
+4. View Candidates
+5. Edit Candidate
+6. Delete Candidate
+7. Sort by Votes
+8. Show Statistics
+9. Export Results
+10. Reset Votes
+11. Clear All Data
+12. Exit
 Enter your choice: 1
 Enter candidate name: Alice
 Candidate added successfully!
@@ -79,9 +103,15 @@ Candidate added successfully!
 1. Add Candidate
 2. Cast Vote
 3. View Results
-4. Reset Votes
-5. Clear All Data
-6. Exit
+4. View Candidates
+5. Edit Candidate
+6. Delete Candidate
+7. Sort by Votes
+8. Show Statistics
+9. Export Results
+10. Reset Votes
+11. Clear All Data
+12. Exit
 Enter your choice: 1
 Enter candidate name: Bob
 Candidate added successfully!
@@ -90,9 +120,15 @@ Candidate added successfully!
 1. Add Candidate
 2. Cast Vote
 3. View Results
-4. Reset Votes
-5. Clear All Data
-6. Exit
+4. View Candidates
+5. Edit Candidate
+6. Delete Candidate
+7. Sort by Votes
+8. Show Statistics
+9. Export Results
+10. Reset Votes
+11. Clear All Data
+12. Exit
 Enter your choice: 2
 
 --- Candidates ---
@@ -105,15 +141,25 @@ Vote cast successfully for Alice!
 1. Add Candidate
 2. Cast Vote
 3. View Results
-4. Reset Votes
-5. Clear All Data
-6. Exit
-Enter your choice: 3
+4. View Candidates
+5. Edit Candidate
+6. Delete Candidate
+7. Sort by Votes
+8. Show Statistics
+9. Export Results
+10. Reset Votes
+11. Clear All Data
+12. Exit
+Enter your choice: 8
 
---- Voting Results ---
-Alice: 1 votes (100.00%)
-Bob: 0 votes (0.00%)
-Total votes: 1
+=== Voting Statistics ===
+Total candidates: 2
+Total votes cast: 1
+Average votes per candidate: 0.50
+Highest vote count: 1
+Lowest vote count: 0
+
+Current Leader: Alice with 1 votes (100.00%)
 ```
 
 ## How It Works
@@ -135,7 +181,13 @@ typedef struct {
 - **`save_data()`** - Saves current state to the binary file
 - **`add_candidate()`** - Registers a new candidate
 - **`cast_vote()`** - Allows voting for a candidate
-- **`display_results()`** - Shows voting statistics
+- **`display_results()`** - Shows voting results with percentages
+- **`view_candidates()`** - Lists all registered candidates
+- **`edit_candidate()`** - Modifies candidate name
+- **`delete_candidate()`** - Removes a candidate from the list
+- **`sort_candidates()`** - Sorts candidates by vote count (descending)
+- **`show_statistics()`** - Displays detailed voting statistics
+- **`export_results()`** - Exports results to a text file
 - **`reset_voting()`** - Clears all votes (keeps candidates)
 - **`clear_all_data()`** - Removes all candidates and votes
 
@@ -143,7 +195,9 @@ typedef struct {
 
 The system automatically saves voting data to `voting_data.dat` in the same directory. This file is created when you first run the program and is updated whenever changes are made. Data is loaded automatically when the program starts, ensuring your voting data persists between sessions.
 
-**Note**: The online compiler option may not support file I/O, so data persistence features will not work in those environments.
+Exported results are saved to `voting_results.txt` in the same directory when using the export feature.
+
+**Note**: The online compiler option may not support file I/O, so data persistence and export features will not work in those environments.
 
 ## Project Structure
 
