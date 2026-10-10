@@ -6,22 +6,3 @@ voting_system
 voting_data.dat
 voting_results.txt
 
-# Object files
-*.o
-*.obj
-
-# Compiled binaries for different platforms
-*.exe
-*.out
-*.app
-
-# IDE specific files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# OS specific files
-.DS_Store
-Thumbs.db
