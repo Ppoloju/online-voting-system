@@ -2,6 +2,8 @@
 
 A comprehensive command-line voting system written in C that allows users to manage candidates, cast votes, view results, and export data with full persistence.
 
+This project was developed as a case study for the Semester 1 Programming for Problem Solving in C course.
+
 ## Features
 
 - **Candidate Management**
@@ -67,11 +69,11 @@ This project can also be compiled and run directly in an online C compiler witho
 The program provides an interactive menu with the following options:
 
 1. **Add Candidate** - Register a new candidate for voting
-2. **Cast Vote** - Vote for one of the registered candidates
-3. **View Results** - See current vote counts and percentages
-4. **View Candidates** - List all registered candidates
-5. **Edit Candidate** - Modify candidate name
-6. **Delete Candidate** - Remove a candidate
+2. **View Candidates** - List all registered candidates
+3. **Edit Candidate** - Modify candidate name
+4. **Delete Candidate** - Remove a candidate
+5. **Cast Vote** - Vote for one of the registered candidates
+6. **View Results** - See current vote counts and percentages
 7. **Sort by Votes** - Display candidates ranked by votes
 8. **Show Statistics** - View detailed voting statistics
 9. **Export Results** - Save results to text file
@@ -84,11 +86,11 @@ The program provides an interactive menu with the following options:
 ```
 === Online Voting System ===
 1. Add Candidate
-2. Cast Vote
-3. View Results
-4. View Candidates
-5. Edit Candidate
-6. Delete Candidate
+2. View Candidates
+3. Edit Candidate
+4. Delete Candidate
+5. Cast Vote
+6. View Results
 7. Sort by Votes
 8. Show Statistics
 9. Export Results
@@ -101,11 +103,11 @@ Candidate added successfully!
 
 === Online Voting System ===
 1. Add Candidate
-2. Cast Vote
-3. View Results
-4. View Candidates
-5. Edit Candidate
-6. Delete Candidate
+2. View Candidates
+3. Edit Candidate
+4. Delete Candidate
+5. Cast Vote
+6. View Results
 7. Sort by Votes
 8. Show Statistics
 9. Export Results
@@ -118,18 +120,18 @@ Candidate added successfully!
 
 === Online Voting System ===
 1. Add Candidate
-2. Cast Vote
-3. View Results
-4. View Candidates
-5. Edit Candidate
-6. Delete Candidate
+2. View Candidates
+3. Edit Candidate
+4. Delete Candidate
+5. Cast Vote
+6. View Results
 7. Sort by Votes
 8. Show Statistics
 9. Export Results
 10. Reset Votes
 11. Clear All Data
 12. Exit
-Enter your choice: 2
+Enter your choice: 5
 
 --- Candidates ---
 1. Alice
@@ -139,11 +141,11 @@ Vote cast successfully for Alice!
 
 === Online Voting System ===
 1. Add Candidate
-2. Cast Vote
-3. View Results
-4. View Candidates
-5. Edit Candidate
-6. Delete Candidate
+2. View Candidates
+3. Edit Candidate
+4. Delete Candidate
+5. Cast Vote
+6. View Results
 7. Sort by Votes
 8. Show Statistics
 9. Export Results
@@ -217,19 +219,10 @@ online-voting-system/
 - `DATA_FILE`: "voting_data.dat" (data file name)
 
 ### Compilation Requirements
-- C compiler with C99 support (GCC, Clang, or MinGW)
+- C compiler (GCC, Clang, or MinGW)
 - Standard C library (stdio.h, stdlib.h, string.h)
 
 ### Compatibility
 - Works on Linux, macOS, and Windows
 - Compatible with online C compilers (with limited file I/O)
 - Uses C89-compatible code for broader compiler support
-
-## Limitations
-
-- Maximum of 10 candidates
-- No user authentication (anyone can vote multiple times)
-- Single-user local system (not networked)
-- Basic error handling (no recovery from corrupted files)
-- Command-line interface only (no GUI)
-- Data persistence requires local file system access

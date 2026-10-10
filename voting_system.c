@@ -329,11 +329,11 @@ void clear_all_data() {
 void display_menu() {
     printf("\n=== Online Voting System ===\n");
     printf("1. Add Candidate\n");
-    printf("2. Cast Vote\n");
-    printf("3. View Results\n");
-    printf("4. View Candidates\n");
-    printf("5. Edit Candidate\n");
-    printf("6. Delete Candidate\n");
+    printf("2. View Candidates\n");
+    printf("3. Edit Candidate\n");
+    printf("4. Delete Candidate\n");
+    printf("5. Cast Vote\n");
+    printf("6. View Results\n");
     printf("7. Sort by Votes\n");
     printf("8. Show Statistics\n");
     printf("9. Export Results\n");
@@ -356,19 +356,19 @@ int main() {
                 add_candidate();
                 break;
             case 2:
-                cast_vote();
-                break;
-            case 3:
-                display_results();
-                break;
-            case 4:
                 view_candidates();
                 break;
-            case 5:
+            case 3:
                 edit_candidate();
                 break;
-            case 6:
+            case 4:
                 delete_candidate();
+                break;
+            case 5:
+                cast_vote();
+                break;
+            case 6:
+                display_results();
                 break;
             case 7:
                 sort_candidates();
