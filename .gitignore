@@ -1,0 +1,26 @@
+# Compiled executable
+voting_system.exe
+voting_system
+
+# Data file (contains voting data)
+voting_data.dat
+
+# Object files
+*.o
+*.obj
+
+# Compiled binaries for different platforms
+*.exe
+*.out
+*.app
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
